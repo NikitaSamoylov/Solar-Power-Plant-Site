@@ -1,5 +1,5 @@
 const form = document.querySelector('.modal-form');
-const modalBtn = document.querySelectorAll('.modal__btn');
+const modalField = document.querySelectorAll('.modal-form__field');
 const modalTitle = document.querySelector('.modal__title');
 
 const message = {
@@ -18,6 +18,9 @@ form.addEventListener('submit', async(evt) => {
     const result = await response.json()
     modalTitle.textContent = message.success;
     modalTitle.style.backgroundColor = 'green';
+    modalField.forEach((item) => {
+      item.value = '';
+    })
 
   } catch (error) {
     modalTitle.textContent = message.failure;

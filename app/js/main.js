@@ -150,7 +150,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (() => {
 
 const form = document.querySelector('.modal-form');
-const modalBtn = document.querySelectorAll('.modal__btn');
+const modalField = document.querySelectorAll('.modal-form__field');
 const modalTitle = document.querySelector('.modal__title');
 const message = {
   success: 'Сообщение отправлено. Скоро с вами свяжемся. Спасибо',
@@ -167,6 +167,9 @@ form.addEventListener('submit', async evt => {
     const result = await response.json();
     modalTitle.textContent = message.success;
     modalTitle.style.backgroundColor = 'green';
+    modalField.forEach(item => {
+      item.value = '';
+    });
   } catch (error) {
     modalTitle.textContent = message.failure;
     modalTitle.style.backgroundColor = 'red';

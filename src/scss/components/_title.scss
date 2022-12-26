@@ -16,3 +16,16 @@ top: -21px;
   font-size: $modal-title-size;
   color: $modal-title-color;
 }
+h2 {
+font-weight: 700;
+font-size: $h2-title-size;
+line-height: 33px;
+color: $h2-title-color;
+text-transform: uppercase;
+}
+h3 {
+font-weight: 700;
+font-size: $h3-title-size;
+line-height: 25px;
+color: $h3-title-color;
+}

@@ -1,0 +1,26 @@
+.services {
+  &__content {
+    display: flex;
+  }
+  &__title {
+    padding-top: 150px;
+    margin-bottom: 58px;
+  }
+}
+
+.services-item {
+  margin-right: 89px;
+  &__title {
+    margin-bottom: 16px;
+  }
+  &__descr {
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 19px;
+    color: $paragraph-color;
+    max-width: 510px;
+  }
+  &:not(:last-child) {
+    margin-bottom: 49px;
+  }
+}

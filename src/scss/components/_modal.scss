@@ -9,9 +9,14 @@
     max-width: 700px;
     font-size: $modal-title-size;
     color: $modal-title-color;
+    line-height: 50px;
     background-color: $modal-title-bg-color;
     padding: 30px 15px 30px;
     text-align: center;
+    @include small-mobile {
+      font-size: 3rem;
+      line-height: 40px;
+    }
   }
   &__btn {
   color: black;
@@ -40,7 +45,6 @@
   animation-duration: 0.6s;
   transition-timing-function: liner;
 }
-
 @keyframes modal-transition {
   0% {
     opacity: 0;
@@ -67,6 +71,12 @@
       font-size: 1.8rem;
       color: rgb(174, 171, 171);
     }
+    @include mobile {
+      width: 310px;
+      }
+    @include small-mobile {
+      width: 270px;
+    }
   }
   &__input {
     display: flex;
@@ -83,7 +93,6 @@
     margin-bottom: 16px;
   }
 }
-
 .notice {
   font-size: 1.4rem;
   color: grey;
