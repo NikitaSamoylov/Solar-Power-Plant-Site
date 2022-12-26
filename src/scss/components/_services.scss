@@ -1,15 +1,36 @@
 .services {
   &__content {
     display: flex;
+    @include for-laptop {
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+    }
   }
   &__title {
     padding-top: 150px;
     margin-bottom: 58px;
+    @include for-laptop {
+      text-align: center;
+    }
+  }
+  &__img {
+    @include for-laptop {
+      height: 430px;
+      width: 100%;
+      margin-bottom: 40px;
+    }
   }
 }
 
 .services-item {
   margin-right: 89px;
+  @include big-laptop {
+    margin-right: 30px;
+  }
+  @include for-laptop {
+    margin-right: 0;
+  }
   &__title {
     margin-bottom: 16px;
   }

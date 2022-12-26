@@ -1,5 +1,10 @@
 /* stylelint-disable */
 
+@mixin big-laptop {
+  @media (max-width: $big-laptop) {
+    @content;
+  }
+}
 @mixin for-laptop {
   @media (max-width: $laptop) {
     @content;
