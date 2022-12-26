@@ -18,8 +18,12 @@
 <body class="page__body">
   <div class="site-container">
     <header class="header">
-  <div class="container">
+  <div class="container header__container">
+    <a href="/" class="header__link">
+      <img src="../img/logo.png" alt="Solar Exe" class="header__logo">
+    </a>
   </div>
+  <div class="substrate"></div>
 </header>
 
     <main class="main">
@@ -29,11 +33,45 @@
       </picture>
     </main>
 
+    <section class="hero">
+  <div class="container hero__container">
+    <div class="hero__content">
+      <span class="hero__pretitle">Зеленый тариф для дома и бизнеса</span>
+      <h1 class="hero__title">Солнечная электростанция <span class="hero__descr">с доходом от 1000 $ в месяц</span></h1>
+      <button class="btn hero__btn">записаться на консультацию</button>
+    </div>
+    <div class="hero__social hero-social">
+      <a href="tg://resolve?phone=89965728515" target="_blank"class="hero-social__link">
+        <img src="../img/telegram-icon.png" alt="Telegram" class="hero-social__telegram">
+      </a>
+      <a href="https://web.whatsapp.com/send?phone=89965728515" target="_blank" class="hero-social__link"><img src="../img/whatsapp-icon.png" alt="Whatsapp" class="hero-social__whatsapp"></a>
+    </div>
+  </div>
+</section>
+
     <footer class="footer">
   <div class="container"></div>
 </footer>
 
-    
+    <section class="modal modal--hidden">
+  <div class="modal__close-btn"></div>
+  <div class="modal__container">
+    <h2 class="modal__title">Запишитесь на консультацию сейчас</h2>
+    <form  class="modal__form modal-form">
+      <div class="modal-form__input modal-form__input--name">
+        <label for="name" class="modal-form__text">Ваше Имя</label>
+        <input type="text" class="modal-form__field modal-form__field--name" id="name" placeholder="Например, Иванов Иван Иванович" autocomplete="off" name="name" required>
+      </div>
+      <div class="modal-form__input modal-form__input--phone">
+        <label for="phone" class="modal-form__text">Ваш телефон</label>
+        <input type="phone" class="modal-form__field" id="phone" placeholder="Например, +7 (922) 96-27-514" autocomplete="off" name="phone" required>
+      </div>
+      <button class="btn modal__btn">Записаться</button>
+    </form>
+    <div class="notice">Нажимая на кнопку, Вы подтверждаете отправку персональных данных</div>
+  </div>
+</section>
+
   </div>
 </body>
 

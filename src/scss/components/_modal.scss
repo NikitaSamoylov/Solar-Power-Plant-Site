@@ -1,0 +1,97 @@
+.modal {
+  background-color: $modal-bg-color;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+  &__title {
+    max-width: 700px;
+    font-size: $modal-title-size;
+    color: $modal-title-color;
+    background-color: $modal-title-bg-color;
+    padding: 30px 15px 30px;
+    text-align: center;
+  }
+  &__btn {
+  color: black;
+  &::before {
+    border-color: grey;
+  }
+  &::after {
+    color: grey;
+  }
+  }
+  &--hidden {
+    display: none;
+  }
+  &__close-btn {
+    background-image: url("../img/close_icon.png");
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 10px;
+    right: 11px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  animation-name: modal-transition;
+  animation-duration: 0.6s;
+  transition-timing-function: liner;
+}
+
+@keyframes modal-transition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 15px 50px 15px;
+  text-align: center;
+  &__field {
+    font-size: 1.6rem;
+    width: 400px;
+    padding: 20px 10px 20px 10px;
+    -webkit-box-shadow: 7px 7px 18px 6px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 7px 7px 18px 6px rgba(34, 60, 80, 0.2);
+    box-shadow: 7px 7px 18px 6px rgba(34, 60, 80, 0.2);
+    &::placeholder {
+      font-size: 1.8rem;
+      color: rgb(174, 171, 171);
+    }
+  }
+  &__input {
+    display: flex;
+    flex-direction: column;
+    &--phone {
+      margin-bottom: 30px;
+    }
+    &--name {
+      margin-bottom: 15px;
+    }
+  }
+  &__text {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+}
+
+.notice {
+  font-size: 1.4rem;
+  color: grey;
+  max-width: 440px;
+  text-align: center;
+  margin-top: 0;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 30px;
+}
+

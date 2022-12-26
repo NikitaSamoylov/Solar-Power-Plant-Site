@@ -143,6 +143,104 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/components/modal-form.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/modal-form.js ***!
+  \*****************************************/
+/***/ (() => {
+
+const form = document.querySelector('.modal-form');
+const modalBtn = document.querySelectorAll('.modal__btn');
+const modalTitle = document.querySelector('.modal__title');
+const message = {
+  success: 'Сообщение отправлено. Скоро с вами свяжемся. Спасибо',
+  failure: 'Ошибка. Обновите страницу и отправьте форму еще раз'
+};
+form.addEventListener('submit', async evt => {
+  evt.preventDefault();
+  const url = 'https://jsonplaceholder.typicode.com/todos/1';
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      body: new FormData(form)
+    });
+    const result = await response.json();
+    modalTitle.textContent = message.success;
+    modalTitle.style.backgroundColor = 'green';
+  } catch (error) {
+    modalTitle.textContent = message.failure;
+    modalTitle.style.backgroundColor = 'red';
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/components/modal-validation.js":
+/*!***********************************************!*\
+  !*** ./src/js/components/modal-validation.js ***!
+  \***********************************************/
+/***/ (() => {
+
+[].forEach.call(document.querySelectorAll('#phone'), function (input) {
+  var keyCode;
+  function mask(event) {
+    event.keyCode && (keyCode = event.keyCode);
+    var pos = this.selectionStart;
+    if (pos < 3) event.preventDefault();
+    var matrix = "+7 (___) ___ ____",
+      i = 0,
+      def = matrix.replace(/\D/g, ""),
+      val = this.value.replace(/\D/g, ""),
+      new_value = matrix.replace(/[_\d]/g, function (a) {
+        return i < val.length ? val.charAt(i++) || def.charAt(i) : a;
+      });
+    i = new_value.indexOf("_");
+    if (i != -1) {
+      i < 5 && (i = 3);
+      new_value = new_value.slice(0, i);
+    }
+    var reg = matrix.substr(0, this.value.length).replace(/_+/g, function (a) {
+      return "\\d{1," + a.length + "}";
+    }).replace(/[+()]/g, "\\$&");
+    reg = new RegExp("^" + reg + "$");
+    if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
+    if (event.type == "blur" && this.value.length < 5) this.value = "";
+  }
+  input.addEventListener("input", mask, false);
+  input.addEventListener("focus", mask, false);
+  input.addEventListener("blur", mask, false);
+  input.addEventListener("keydown", mask, false);
+});
+const inputName = document.querySelector('.modal-form__field--name');
+inputName.addEventListener('input', event => {
+  event.target.value = event.target.value.replace(/\d{1,}/gi, '').trimStart();
+});
+
+/***/ }),
+
+/***/ "./src/js/components/show-modal.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/show-modal.js ***!
+  \*****************************************/
+/***/ (() => {
+
+const showBtn = document.querySelector('.btn');
+const modal = document.querySelector('.modal');
+const substrate = document.querySelector('.substrate');
+const closeBtn = document.querySelector('.modal__close-btn');
+showBtn.addEventListener('click', () => {
+  modal.classList.remove('modal--hidden');
+  substrate.style.display = 'block';
+  document.body.style.overflowY = 'hidden';
+});
+closeBtn.addEventListener('click', () => {
+  modal.classList.add('modal--hidden');
+  substrate.style.display = 'none';
+  document.body.style.overflowY = '';
+});
+
+/***/ }),
+
 /***/ "./src/js/functions/mobile-check.js":
 /*!******************************************!*\
   !*** ./src/js/functions/mobile-check.js ***!
@@ -540,6 +638,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_functions */ "./src/js/_functions.js");
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_components */ "./src/js/_components.js");
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_modal_validation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/modal-validation */ "./src/js/components/modal-validation.js");
+/* harmony import */ var _components_modal_validation__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_modal_validation__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_modal_form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/modal-form */ "./src/js/components/modal-form.js");
+/* harmony import */ var _components_modal_form__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_modal_form__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_show_modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/show-modal */ "./src/js/components/show-modal.js");
+/* harmony import */ var _components_show_modal__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_components_show_modal__WEBPACK_IMPORTED_MODULE_6__);
+
+
+
 
 
 

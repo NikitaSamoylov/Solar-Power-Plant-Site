@@ -1,0 +1,18 @@
+h1 {
+font-weight: 700;
+font-size: $hero-title-size;
+line-height: 87px;
+color: $h1-hero-color;
+margin: 0;
+}
+.hero__descr {
+font-weight: 400;
+font-size: $hero-descr-size;
+line-height: 57px;
+position: relative;
+top: -21px;
+}
+.modal__title {
+  font-size: $modal-title-size;
+  color: $modal-title-color;
+}
