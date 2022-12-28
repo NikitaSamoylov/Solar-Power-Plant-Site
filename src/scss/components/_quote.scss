@@ -1,0 +1,21 @@
+.quote {
+  background-image: url("../img/quote-img.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.quote-text {
+  max-width: 673px;
+  padding-top: 128px;
+  padding-bottom: 144px;
+  margin: 0 auto;
+  font-weight: 400;
+  font-size: $quote-font-size;
+  line-height: 57px;
+  text-align: center;
+  color: $quote-text-color;
+  transform: translateX(-6px);
+  &__move-left {
+    display: inline-block;
+    transform: translateX(6px);
+  }
+}

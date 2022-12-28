@@ -43,6 +43,11 @@ $button-text-color: #FFFFFF;
 $button-bg-hover-color: #A9A32A;
 $button-border-color: #fff;
 
+// blockquote------------------------
+
+$quote-text-color: #fff;
+$quote-font-size: 4.2rem;
+
 // button text size
 $btn-text-size: 1.8rem;
 
@@ -66,10 +71,18 @@ $modal-title-bg-color: #455ea0;
 // modal button text size
 $modal-btn-text-size: 2.2rem;
 
+// Tabs-------------------------------------
+
+$tabs-title-color: #303030;
+$tabs-title-size: 1.8rem;
+
 // breakpoints-------------------------------
 
 $big-laptop: 1200px;
 $laptop: 960px;
+$mobile-big-landscape: 850px;
 $mobile-landscape: 580px;
 $mobile: 500px;
 $small-mobile: 400px;
+
+

@@ -4,8 +4,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   max-width: 1921px;
-  padding-bottom: 254px;
+  padding-bottom: 336px;
   background-position: center;
+  margin: 0 auto;
   &__content {
     padding-top: 260px;
     max-width: 934px;
@@ -60,7 +61,7 @@
   }
 
   &__btn {
-    top: -80px;
+    top: 0;
     left: -50px;
     transform: translateX(29px);
     @include small-mobile {

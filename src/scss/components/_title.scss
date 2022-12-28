@@ -1,31 +1,34 @@
-h1 {
-font-weight: 700;
-font-size: $hero-title-size;
-line-height: 87px;
-color: $h1-hero-color;
-margin: 0;
+.hero__title {
+  font-weight: 700;
+  font-size: $hero-title-size;
+  line-height: 87px;
+  color: $h1-hero-color;
+  margin: 0;
 }
 .hero__descr {
-font-weight: 400;
-font-size: $hero-descr-size;
-line-height: 57px;
-position: relative;
-top: -21px;
+  font-weight: 400;
+  font-size: $hero-descr-size;
+  line-height: 57px;
+  position: relative;
+  top: -21px;
 }
 .modal__title {
   font-size: $modal-title-size;
   color: $modal-title-color;
 }
-h2 {
-font-weight: 700;
-font-size: $h2-title-size;
-line-height: 33px;
-color: $h2-title-color;
-text-transform: uppercase;
+.section-title {
+  font-weight: 700;
+  font-size: $h2-title-size;
+  line-height: 33px;
+  color: $h2-title-color;
+  text-transform: uppercase;
+  &--hidden {
+    display: none !important;
+  }
 }
 h3 {
-font-weight: 700;
-font-size: $h3-title-size;
-line-height: 25px;
-color: $h3-title-color;
+  font-weight: 700;
+  font-size: $h3-title-size;
+  line-height: 25px;
+  color: $h3-title-color;
 }
