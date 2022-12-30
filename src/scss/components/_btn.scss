@@ -4,13 +4,16 @@ font-size: $btn-text-size;
 line-height: 25px;
 color: $button-text-color;
 position: relative;
+z-index: 10;
 
 &::after {
   content: url("../img/btn-arrow.png");
   z-index: 3;
   position: absolute;
-  top: 60px;
-  left: 80px;
+  // top: 60px;
+  // left: 80px;
+  top: -20px;
+  left: -19px;
 }
 
 &::before {
@@ -22,14 +25,24 @@ position: relative;
   border-color: #fff;
   border-radius: 50%;
   display: inline-block;
-  position: relative;
-  top: 21px;
-  left: 51px;
+  position: absolute;
+  // top: 21px;
+  // left: 51px;
+  top: -59px;
+  left: -48px;
   transition: all ease-in-out 0.3s;
   z-index: -1;
-
 }
 &:hover::before {
   background-color: $button-bg-hover-color;
 }
+}
+.btn--black {
+  color: $button-text-secondary-color;
+  &::after {
+    content: url("../img/btn-dark-arrow.png");
+  }
+  &::before {
+    border-color: #303030;
+  }
 }

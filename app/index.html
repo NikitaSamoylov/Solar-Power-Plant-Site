@@ -11,6 +11,12 @@
   <link rel="preload" href="../resources/fonts/MullerRegular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/vendor.css">
   <link rel="stylesheet" href="css/main.css">
+  <!-- swiper -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+<script defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script defer src="js/main.js"></script>
 </head>
 
@@ -38,7 +44,7 @@
     <div class="hero__content">
       <span class="hero__pretitle">Зеленый тариф для дома и бизнеса</span>
       <h1 class="hero__title">Солнечная электростанция <span class="hero__descr">с доходом от 1000 $ в месяц</span></h1>
-      <button class="btn hero__btn">записаться на консультацию</button>
+      <button class="btn btn-launch-modal hero__btn">записаться на консультацию</button>
     </div>
     <div class="hero__social hero-social">
       <a href="tg://resolve?phone=89965728515" target="_blank"class="hero-social__link">
@@ -163,6 +169,83 @@
   </div>
 </section>
 
+    <section class="clients">
+  <div class="container clients__container">
+    <h2 class="section-title clients__title">Наши клиенты</h2>
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img src="../img/clients-img.jpg" alt="Коттедж с солнечными панелями" class="swiper-slide__img">
+          <div class="swiper-slide__text-content text-content">
+            <div class="clients-content__container text-content__container">
+              <h3 class="text-content__title">Солнечная электростанция 30 кВт подключенная по Зеленому Тарифу
+              </h3>
+              <ul class="text-content__items">
+                <li class="text-content__item">Расположение: Харьковская обл., г. Харьков
+                </li>
+                <li class="text-content__item">Чистый доход за вычетом налогов с мая 2017 г. по май 2019 г. 13 900 $.</li>
+                <li class="text-content__item">Смонтирована: апрель 2017 г.
+                </li>
+                <li class="text-content__item">Срок службы: 25-30 лет
+                </li>
+              </ul>
+            </div>
+            <button class="btn btn--black btn-launch-modal text-content__button">Записаться на консультацию</button>
+        </div>
+      </div>
+      <!-- Second slide -->
+        <div class="swiper-slide">
+          <img src="../img/clients-2.jpg" alt="Коттедж с солнечными панелями" class="swiper-slide__img">
+          <div class="swiper-slide__text-content text-content">
+            <div class="clients-content__container text-content__container">
+              <h3 class="text-content__title">Солнечная электростанция 30 кВт подключенная по Зеленому Тарифу
+              </h3>
+              <ul class="text-content__items">
+                <li class="text-content__item">Расположение: Владимирская обл., г. Владимир
+                </li>
+                <li class="text-content__item">Чистый доход за вычетом налогов с июля 2018 г. по май 2019 г. 8 900 $.</li>
+                <li class="text-content__item">Смонтирована: июнь 2018 г.
+                </li>
+                <li class="text-content__item">Срок службы: 25-30 лет
+                </li>
+              </ul>
+            </div>
+            <button class="btn btn--black btn-launch-modal text-content__button">Записаться на консультацию</button>
+        </div>
+      </div>
+      <!-- third slide -->
+        <div class="swiper-slide">
+          <img src="../img/clients-3.jpg" alt="Коттедж с солнечными панелями" class="swiper-slide__img">
+          <div class="swiper-slide__text-content text-content">
+            <div class="clients-content__container text-content__container">
+              <h3 class="text-content__title">Солнечная электростанция 30 кВт подключенная по Зеленому Тарифу
+              </h3>
+              <ul class="text-content__items">
+                <li class="text-content__item">Расположение: Ярославская обл., г. Ярославль
+                </li>
+                <li class="text-content__item">Чистый доход за вычетом налогов с июня 2019 г. по август 2019 г. 900 $.</li>
+                <li class="text-content__item">Смонтирована: май 2019 г.
+                </li>
+                <li class="text-content__item">Срок службы: 25-30 лет
+                </li>
+              </ul>
+            </div>
+            <button class="btn btn--black btn-launch-modal text-content__button">Записаться на консультацию</button>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <div class="clients__buttons clients-buttons">
+    <div class="clients-buttons__item"><img class="clients-buttons__prev" src="../img/prev.png" alt="Назад"></div>
+    <div class="clients-buttons__item clients-buttons__next"><img class="clients-buttons__next" src="../img/next.png" alt="Вперед"></div>
+  </div>
+  </div>
+</section>
+
     
 
     <section class="modal modal--hidden">
@@ -178,7 +261,7 @@
         <label for="phone" class="modal-form__text">Ваш телефон</label>
         <input type="phone" class="modal-form__field" id="phone" placeholder="Например, +7 (922) 96-27-514" autocomplete="off" name="phone" required>
       </div>
-      <button class="btn modal__btn">Записаться</button>
+      <button class="btn btn--black modal__btn">Записаться</button>
     </form>
     <div class="notice">Нажимая на кнопку, Вы подтверждаете отправку персональных данных</div>
   </div>

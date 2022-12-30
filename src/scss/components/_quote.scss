@@ -18,4 +18,12 @@
     display: inline-block;
     transform: translateX(6px);
   }
+  @include mobile {
+    font-size: 3.5rem;
+    line-height: 48px;
+  }
+  @include small-mobile {
+    font-size: 2.8rem;
+    line-height: 42px;
+  }
 }

@@ -3,8 +3,8 @@
   @include big-laptop {
     margin-bottom: 60px;
   }
-  @include mobile-big-landscape {
-    justify-content: space-around;
+  @include for-laptop {
+    justify-content: space-between;
   }
   display: flex;
   &__item {
@@ -19,6 +19,11 @@
       width: 100%;
       top: 25px;
       left: 0;
+      @include old-mobile {
+        width: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
     &:not(:last-child) {
       margin-right: 44px;
@@ -32,6 +37,19 @@
         margin-right: 0;
       }
     }
+    @include for-laptop {
+      &:not(:last-child) {
+        margin-right: 20px;
+        @include old-mobile {
+          margin-right: 0;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+  @include old-mobile {
+    flex-direction: column;
+    margin-right: 0;
   }
 }
 
@@ -41,10 +59,21 @@
     &--active {
       display: flex !important;
     }
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
   }
   &__img {
-    width: 235px;
-    height: 200px;
     margin-right: 40px;
+    @include mobile-landscape {
+      margin-right: 15px;
+    }
+    @include mobile {
+      width: 350px;
+      height: auto;
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
   }
 }

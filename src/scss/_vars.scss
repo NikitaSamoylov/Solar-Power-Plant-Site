@@ -40,6 +40,7 @@ $footer-text-color: #FFFFFF;
 
 // button colors
 $button-text-color: #FFFFFF;
+$button-text-secondary-color: #303030;
 $button-bg-hover-color: #A9A32A;
 $button-border-color: #fff;
 
@@ -60,7 +61,7 @@ $arrow-hover-color: #A9A32A;
 $modal-bg-color: #fff;
 
 // modal title size
-$modal-title-size: 4.2rem;
+$modal-title-size: 4rem;
 
 // modal title color
 $modal-title-color: #fff;
@@ -79,10 +80,11 @@ $tabs-title-size: 1.8rem;
 // breakpoints-------------------------------
 
 $big-laptop: 1200px;
-$laptop: 960px;
+$laptop: 990px;
 $mobile-big-landscape: 850px;
 $mobile-landscape: 580px;
-$mobile: 500px;
+$mobile: 510px;
 $small-mobile: 400px;
+$old-mobile: 385px;
 
 

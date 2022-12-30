@@ -4,6 +4,7 @@ import './_functions';
 import './_components';
 import './components/slider';
 import './components/tabs';
+import './components/clients-slider';
 import './components/show-modal';
-import './components/modal-validation';
 import './components/modal-form';
+import './components/modal-validation';

@@ -30,5 +30,10 @@
     @content;
   }
 }
+@mixin old-mobile {
+  @media (max-width: $old-mobile) {
+    @content;
+  }
+}
 
 

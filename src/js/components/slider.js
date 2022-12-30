@@ -45,41 +45,47 @@ prev.addEventListener('click', function() {
   prev.classList.add('animate')
   plusSlides(-1);
 });
-prev.addEventListener("animationend", animateFunction(prev)
-, false);
+prev.addEventListener("animationend", () => {
+  animateFunction(prev)
+}, false);
 
 next.addEventListener('click', function() {
   next.classList.add('animate');
   plusSlides(1);
 });
-next.addEventListener("animationend", animateFunction(prev)
-, false);
+next.addEventListener("animationend", () => {
+  animateFunction(next)
+}, false);
 
 prev2.addEventListener('click', function() {
   prev2.classList.add('animate');
   plusSlides(-1);
 });
-prev2.addEventListener("animationend", animateFunction(prev)
-, false);
+prev2.addEventListener("animationend", () => {
+  animateFunction(prev2)
+}, false);
 
 next2.addEventListener('click', function() {
   next2.classList.add('animate');
   plusSlides(1);
 });
-next2.addEventListener("animationend", animateFunction(prev)
-, false);
+next2.addEventListener("animationend", () => {
+  animateFunction(next2)
+}, false);
 
 prev3.addEventListener('click', function() {
   prev3.classList.add('animate');
   plusSlides(-1);
 });
-prev3.addEventListener("animationend", animateFunction(prev)
-, false);
+prev3.addEventListener("animationend", () => {
+  animateFunction(prev3)
+}, false);
 
 next3.addEventListener('click', function() {
   next3.classList.add('animate');
   plusSlides(1);
 });
-next3.addEventListener("animationend", animateFunction(prev)
-, false);
+next3.addEventListener("animationend", () => {
+  animateFunction(next3)
+}, false);
 

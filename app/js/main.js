@@ -143,6 +143,35 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/components/clients-slider.js":
+/*!*********************************************!*\
+  !*** ./src/js/components/clients-slider.js ***!
+  \*********************************************/
+/***/ (() => {
+
+const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+  slidesPerView: 1,
+  loop: true,
+  paginationClickable: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  }
+});
+swiper.navigation.prevEl.style.display = 'none';
+swiper.navigation.nextEl.style.display = 'none';
+const clientsButtons = document.querySelector('.clients-buttons');
+clientsButtons.addEventListener('click', function (evt) {
+  evt.target.classList.add('animate');
+  evt.target.addEventListener('animationend', function () {
+    evt.target.classList.remove('animate');
+  }, false);
+  evt.target.classList.contains('clients-buttons__prev') ? swiper.navigation.prevEl.click() : swiper.navigation.nextEl.click();
+});
+
+/***/ }),
+
 /***/ "./src/js/components/modal-form.js":
 /*!*****************************************!*\
   !*** ./src/js/components/modal-form.js ***!
@@ -227,19 +256,37 @@ inputName.addEventListener('input', event => {
   \*****************************************/
 /***/ (() => {
 
-const showBtn = document.querySelector('.btn');
+const showBtn = document.querySelectorAll('.btn-launch-modal');
 const modal = document.querySelector('.modal');
 const substrate = document.querySelector('.substrate');
 const closeBtn = document.querySelector('.modal__close-btn');
-showBtn.addEventListener('click', () => {
-  modal.classList.remove('modal--hidden');
-  substrate.style.display = 'block';
-  document.body.style.overflowY = 'hidden';
+const CLOSE_MODAL_KEY = {
+  ESC: 'Esc',
+  ESCAPE: 'Escape'
+};
+showBtn.forEach(function (el) {
+  el.addEventListener('click', function () {
+    console.log('ok');
+    modal.classList.remove('modal--hidden');
+    substrate.style.display = 'block';
+    document.body.style.overflowY = 'hidden';
+  });
 });
 closeBtn.addEventListener('click', () => {
   modal.classList.add('modal--hidden');
   substrate.style.display = 'none';
   document.body.style.overflowY = '';
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key === CLOSE_MODAL_KEY.ESC || e.key === CLOSE_MODAL_KEY.ESCAPE) {
+    modal.classList.add('modal--hidden');
+    substrate.style.display = 'none';
+    document.body.style.overflowY = '';
+    showBtn.forEach(i => {
+      i.classList.remove('focus-visible');
+    });
+  }
+  ;
 });
 
 /***/ }),
@@ -285,32 +332,44 @@ prev.addEventListener('click', function () {
   prev.classList.add('animate');
   plusSlides(-1);
 });
-prev.addEventListener("animationend", animateFunction(prev), false);
+prev.addEventListener("animationend", () => {
+  animateFunction(prev);
+}, false);
 next.addEventListener('click', function () {
   next.classList.add('animate');
   plusSlides(1);
 });
-next.addEventListener("animationend", animateFunction(prev), false);
+next.addEventListener("animationend", () => {
+  animateFunction(next);
+}, false);
 prev2.addEventListener('click', function () {
   prev2.classList.add('animate');
   plusSlides(-1);
 });
-prev2.addEventListener("animationend", animateFunction(prev), false);
+prev2.addEventListener("animationend", () => {
+  animateFunction(prev2);
+}, false);
 next2.addEventListener('click', function () {
   next2.classList.add('animate');
   plusSlides(1);
 });
-next2.addEventListener("animationend", animateFunction(prev), false);
+next2.addEventListener("animationend", () => {
+  animateFunction(next2);
+}, false);
 prev3.addEventListener('click', function () {
   prev3.classList.add('animate');
   plusSlides(-1);
 });
-prev3.addEventListener("animationend", animateFunction(prev), false);
+prev3.addEventListener("animationend", () => {
+  animateFunction(prev3);
+}, false);
 next3.addEventListener('click', function () {
   next3.classList.add('animate');
   plusSlides(1);
 });
-next3.addEventListener("animationend", animateFunction(prev), false);
+next3.addEventListener("animationend", () => {
+  animateFunction(next3);
+}, false);
 
 /***/ }),
 
@@ -739,12 +798,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_slider__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _components_tabs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/tabs */ "./src/js/components/tabs.js");
 /* harmony import */ var _components_tabs__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_tabs__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_show_modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/show-modal */ "./src/js/components/show-modal.js");
-/* harmony import */ var _components_show_modal__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_components_show_modal__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _components_modal_validation__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/modal-validation */ "./src/js/components/modal-validation.js");
-/* harmony import */ var _components_modal_validation__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_components_modal_validation__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_clients_slider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/clients-slider */ "./src/js/components/clients-slider.js");
+/* harmony import */ var _components_clients_slider__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_components_clients_slider__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_show_modal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/show-modal */ "./src/js/components/show-modal.js");
+/* harmony import */ var _components_show_modal__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_components_show_modal__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _components_modal_form__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/modal-form */ "./src/js/components/modal-form.js");
 /* harmony import */ var _components_modal_form__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_components_modal_form__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _components_modal_validation__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/modal-validation */ "./src/js/components/modal-validation.js");
+/* harmony import */ var _components_modal_validation__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_components_modal_validation__WEBPACK_IMPORTED_MODULE_9__);
+
 
 
 

@@ -4,12 +4,20 @@
   justify-content: space-between;
   max-width: 235px;
   &__item {
-    width: 235px;
     font-weight: 400;
     font-size: 1.4rem;
     line-height: 19px;
     color: #303030;
     animation: slider-anim 0.4s linear;
+    @include mobile {
+      max-width: 310;
+    }
+    @include mobile {
+      margin-bottom: 30px;
+    }
+  }
+  @include mobile {
+    max-width: 310px;
   }
 }
 .slider-nav, .slider-two-nav, .slider-three-nav {

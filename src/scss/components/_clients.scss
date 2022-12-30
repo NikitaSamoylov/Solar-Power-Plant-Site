@@ -1,0 +1,132 @@
+.clients {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  &__title {
+    margin-bottom: 59px;
+    @include mobile-big-landscape {
+      text-align: center;
+    }
+  }
+}
+.swiper {
+  @include mobile-big-landscape {
+    width: auto;
+    height: 750px;
+    margin-bottom: 20px;
+  }
+  @include small-mobile {
+    height: 771px;
+    margin-bottom: 10;
+  }
+}
+.swiper-slide {
+  display: flex;
+  cursor: pointer;
+  &__img {
+    width: 510px;
+    height: 370px;
+    margin-right: 91px;
+    margin-bottom: 26px;
+    @include big-laptop {
+      margin-right: 50px;
+    }
+    @include for-laptop {
+      margin-right: 36px;
+    }
+    @include mobile-big-landscape {
+      margin-right: 0;
+    }
+  }
+  @include mobile-big-landscape {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+}
+.text-content {
+  &__title {
+    max-width: 478px;
+    text-align: left;
+    margin-bottom: 30px;
+    transform: translateY(-1px);
+  }
+  &__item {
+    padding-left: 49px;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 19px;
+    color: #303030;
+    &:not(:last-child) {
+      margin-bottom: 16px;
+      @include for-laptop {
+        margin-bottom: 10px;
+      }
+    }
+    &:last-child {
+      margin-bottom: 45px;
+      @include for-laptop {
+        margin-bottom: 15px;
+      }
+      @include small-mobile {
+        margin-bottom: 0;
+      }
+    }
+    @include for-laptop {
+      padding-left: 0;
+    }
+  }
+  &__button {
+    transform: translateX(-51px);
+    left: 97px;
+    top: 79px;
+    &::before {
+      width: 97px;
+      height: 96px;
+      top: -58px;
+      left: -47px;
+      @include small-mobile {
+        width: 70px;
+        height: 70px;
+        top: -41px;
+        left: -40px;
+      }
+    }
+    &::after {
+      left: -17px;
+      @include small-mobile {
+        top: -13px;
+      }
+    }
+    @include for-laptop {
+      font-size: 1.6rem;
+    }
+    @include mobile-big-landscape {
+      left: 50%;
+      transform: translateX(-50%);
+      margin-left: 15px;
+    }
+    @include small-mobile {
+      font-size: 1.6rem;
+    }
+  }
+}
+.clients-buttons {
+  display: flex;
+  transform: translateX(276px);
+  cursor: pointer;
+  @include mobile-big-landscape {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @include small-mobile {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__prev {
+    margin-right: 18px;
+    @include mobile-big-landscape {
+      margin-right: 40px;
+    }
+}
+}

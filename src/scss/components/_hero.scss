@@ -9,6 +9,7 @@
   margin: 0 auto;
   &__content {
     padding-top: 260px;
+    padding-bottom: 81px;
     max-width: 934px;
     text-align: center;
     position: relative;
@@ -16,31 +17,35 @@
     transform: translateX(-50%);
   }
   &__pretitle {
+    display: inline-block;
     position: relative;
     left: 5px;
     font-weight: 400;
     font-size: 1.8rem;
     line-height: 25px;
     color: $span-hero-color;
+    @include mobile-landscape {
+      margin-bottom: 20px;
+    }
   }
 
   &__title {
-    margin-bottom: 82px;
+    margin: 0 0 80px 0;
     @include for-laptop {
       display: flex;
       flex-direction: column;
     }
     @include mobile-landscape {
-      font-size: 5.4rem;
-      line-height: 71px;
+      font-size: 5.4rem !important;
+      line-height: 59px !important;
     }
     @include mobile {
-      font-size: 4.4rem;
-      line-height: 60px;
+      font-size: 4.4rem !important;
+      line-height: 50px !important;
     }
     @include small-mobile {
-      font-size: 3.4rem;
-      line-height: 50px;
+      font-size: 3.4rem !important;
+      line-height: 50px !important;
     }
   }
 
@@ -51,19 +56,18 @@
       padding-top: 40px;
     }
     @include mobile {
-      font-size: 3rem;
-      line-height: 50px;
+      font-size: 3rem !important;
+      line-height: 50px !important;
     }
     @include small-mobile {
-      font-size: 2.6rem;
-      line-height: 45px;
+      font-size: 2.4rem !important;
+      line-height: 32px !important;
     }
   }
 
   &__btn {
-    top: 0;
-    left: -50px;
-    transform: translateX(29px);
+    top: 81px;
+    left: 28px;
     @include small-mobile {
       text-align: right;
     }
