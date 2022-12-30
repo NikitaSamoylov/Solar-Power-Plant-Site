@@ -38,8 +38,12 @@
   grid-template-columns: repeat(auto-fill, minmax(205px, auto));
   grid-column-gap: 39px;
   grid-row-gap: 18px;
+  max-width: 509px;
   @include for-laptop {
     margin-bottom: 50px;
+  }
+  @include mobile {
+    max-width: 390px;
   }
 }
 
