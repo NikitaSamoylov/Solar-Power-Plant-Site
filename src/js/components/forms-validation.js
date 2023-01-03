@@ -31,10 +31,18 @@
   input.addEventListener("keydown", mask, false)
 });
 
-const inputName = document.querySelector('.modal-form__field--name');
-  inputName.addEventListener('input', event => {
-    event.target.value = event.target.value.replace(/\d{1,}/gi, '').trimStart();
-  })
+// name validation
+function validateInput(param) {
+  param.addEventListener('input', evt => {
+    evt.target.value = evt.target.value.replace(/[^а-яa-z\s]/gi, '').trimStart();
+  });
+};
+
+const inputFormName = document.querySelectorAll('.form-field--name');
+inputFormName.forEach((item) => {
+  validateInput(item);
+});
+
 
 
 
