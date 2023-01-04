@@ -5,7 +5,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 6;
-  overflow-y:scroll;
+  overflow-y: auto;
   &__title {
     max-width: 700px;
     font-size: $modal-title-size;
@@ -14,22 +14,35 @@
     background-color: $modal-title-bg-color;
     padding: 30px 15px 30px;
     text-align: center;
-    @include small-mobile {
-      font-size: 3rem;
-      line-height: 40px;
+    @include big-laptop {
+      font-size: 2.8rem;
+      line-height: 35px;
+      padding: 15px 15px 15px;
     }
   }
   &__btn {
   color: black;
   top: 65px;
   left: 28px;
+  @include big-laptop {
+    font-size: 1.6rem;
+  }
   &::before {
     border-color: grey;
+    @include big-laptop {
+      width: 80px;
+      height: 80px;
+      top: -43px;
+    }
   }
   &::after {
     color: grey;
+    @include big-laptop {
+      top: -15px;
+      left: -27px;
+    }
   }
-  }
+}
   &--hidden {
     display: none;
   }
@@ -63,6 +76,9 @@
   align-items: center;
   padding: 40px 15px 100px 15px;
   text-align: center;
+  @include big-laptop {
+    padding: 24px 15px 90px 15px;
+  }
   &__field {
     font-size: 1.6rem;
     width: 400px;
@@ -73,6 +89,13 @@
     &::placeholder {
       font-size: 1.8rem;
       color: rgb(174, 171, 171);
+      @include big-laptop {
+        font-size: 1.6rem;
+      }
+    }
+    @include big-laptop {
+      font-size: 1.4rem;
+      padding: 15px 10px;
     }
     @include mobile {
       width: 310px;
@@ -86,6 +109,9 @@
     flex-direction: column;
     &--phone {
       margin-bottom: 30px;
+      @include big-laptop {
+        margin-bottom: 0;
+      }
     }
     &--name {
       margin-bottom: 15px;
@@ -105,4 +131,7 @@
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 35px;
+  @include big-laptop {
+    margin-bottom: 20px;
+  }
 }

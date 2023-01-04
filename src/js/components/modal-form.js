@@ -4,7 +4,7 @@ const modalTitle = document.querySelector('.modal__title');
 
 const message = {
   success: 'Заявка отправлена. Скоро с вами свяжемся. Спасибо',
-  failure: 'Ошибка. Обновите страницу и отправьте форму еще раз'
+  failure: 'Ошибка. Попробуйте еще раз'
 }
 
 form.addEventListener('submit', async(evt) => {
@@ -18,6 +18,7 @@ form.addEventListener('submit', async(evt) => {
     });
     const result = await response.json()
     modalTitle.textContent = message.success;
+    modalTitle.style.fontSize = '2rem';
     modalTitle.style.backgroundColor = 'green';
     modalField.forEach((item) => {
       item.value = '';
@@ -25,6 +26,7 @@ form.addEventListener('submit', async(evt) => {
 
   } catch (error) {
     modalTitle.textContent = message.failure;
+    modalTitle.style.fontSize = '2rem';
     modalTitle.style.backgroundColor = 'red';
   }
 })
